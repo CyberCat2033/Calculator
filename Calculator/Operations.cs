@@ -1,8 +1,8 @@
 ﻿namespace Calculator;
 
-public enum Operation : byte
+public enum Operations : byte
 {
-    Add = 1,
+    Add,
     Subtract,
     Multiply,
     Divide,

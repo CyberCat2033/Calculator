@@ -1,3 +1,4 @@
+
 namespace Calculator;
 
 public static class CalcHelper
@@ -5,7 +6,7 @@ public static class CalcHelper
     #region Variables
 
     private const sbyte MaxDegr = 20;
-    public static byte TypeOfOperation;
+    public static Operations TypeOfOperation;
     public static bool IsSecondNumber { set; private get; } = false;
     public static bool IsResult { get; private set; } = false;
     public static decimal FirstNumber { set; private get; }
@@ -13,6 +14,7 @@ public static class CalcHelper
     public static decimal Result { private set; get; }
 
     #endregion
+
 
     #region Public Methods
 
@@ -22,11 +24,11 @@ public static class CalcHelper
         {
             Result = TypeOfOperation switch
             {
-                1 => FirstNumber + SecondNumber,
-                2 => FirstNumber - SecondNumber,
-                3 => FirstNumber * SecondNumber,
-                4 => FirstNumber / SecondNumber,
-                5 => Pow(FirstNumber, (sbyte)SecondNumber),
+                Operations.Add => FirstNumber + SecondNumber,
+                Operations.Subtract => FirstNumber - SecondNumber,
+                Operations.Multiply => FirstNumber * SecondNumber,
+                Operations.Divide => FirstNumber / SecondNumber,
+                Operations.Pow => Pow(FirstNumber, (sbyte)SecondNumber),
                 _ => 0,
             };
             ResultSwitch();
@@ -70,10 +72,10 @@ public static class CalcHelper
         txt.Clear();
     }
 
-    public static void Parse(TextBox txt, Operation oper)
+    public static void Parse(TextBox txt, Operations oper)
     {
         Parse(txt);
-        TypeOfOperation = (byte)oper;
+        TypeOfOperation = oper;
     }
 
     public static void Clear()

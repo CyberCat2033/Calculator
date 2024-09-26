@@ -204,26 +204,26 @@ public partial class Form1 : Form
 
     private void Divide_Click(object sender, EventArgs e)
     {
-        CalcHelper.Parse(TEXT, Operation.Divide);
+        CalcHelper.Parse(TEXT, Operations.Divide);
 
 
     }
 
     private void Multiply_Click(object sender, EventArgs e)
     {
-        CalcHelper.Parse(TEXT, Operation.Multiply);
+        CalcHelper.Parse(TEXT, Operations.Multiply);
 
     }
 
     private void Add_Click(object sender, EventArgs e)
     {
-        CalcHelper.Parse(TEXT, Operation.Add);
+        CalcHelper.Parse(TEXT, Operations.Add);
 
     }
 
     private void Substract_Click(object sender, EventArgs e)
     {
-        CalcHelper.Parse(TEXT, Operation.Subtract);
+        CalcHelper.Parse(TEXT, Operations.Subtract);
     }
 
     private void Decimal_Click(object sender, EventArgs e)
@@ -253,7 +253,7 @@ public partial class Form1 : Form
 
     private void Pow_Click(object sender, EventArgs e)
     {
-        CalcHelper.Parse(TEXT, Operation.Pow);
+        CalcHelper.Parse(TEXT, Operations.Pow);
     }
 
     #endregion
